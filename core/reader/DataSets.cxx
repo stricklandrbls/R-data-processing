@@ -1,3 +1,5 @@
-#include <reader/IReadDataSets.h>
+#include <reader/DataSet.h>
 
-void test(){ return; }
+DataSet::DataSet(IDataSource* source): _source{ source } {
+    _headers = _source->headers();
+}
